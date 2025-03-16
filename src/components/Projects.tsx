@@ -178,6 +178,7 @@ const ProjectCard = ({ project, onViewDetails }: ProjectCardProps) => {
             >
               <Eye size={18} />
             </motion.button>
+            {/* Hapus atau komentari bagian ini untuk menghilangkan link GitHub dan live link
             <motion.a 
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
@@ -200,6 +201,7 @@ const ProjectCard = ({ project, onViewDetails }: ProjectCardProps) => {
             >
               <Github size={18} />
             </motion.a>
+            */}
           </motion.div>
         </motion.div>
       </div>
