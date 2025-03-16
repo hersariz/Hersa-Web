@@ -178,30 +178,7 @@ const ProjectCard = ({ project, onViewDetails }: ProjectCardProps) => {
             >
               <Eye size={18} />
             </motion.button>
-            {/* Hapus atau komentari bagian ini untuk menghilangkan link GitHub dan live link
-            <motion.a 
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-              href={project.liveLink} 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="p-2 bg-white text-gray-900 rounded-full hover:bg-blue-600 hover:text-white transition-colors"
-              aria-label="View live project"
-            >
-              <ExternalLink size={18} />
-            </motion.a>
-            <motion.a 
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-              href={project.githubLink} 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="p-2 bg-white text-gray-900 rounded-full hover:bg-blue-600 hover:text-white transition-colors"
-              aria-label="View GitHub repository"
-            >
-              <Github size={18} />
-            </motion.a>
-            */}
+    
           </motion.div>
         </motion.div>
       </div>
