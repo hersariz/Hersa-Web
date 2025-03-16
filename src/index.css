@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: 'Inter', sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply antialiased font-inter;
+}
+
+.font-inter {
+  font-family: 'Inter', sans-serif;
+}
+
+/* Fixes for Tailwind's dark mode */
+.dark {
+  color-scheme: dark;
+}
+
+/* Smooth scrolling for the entire page */
+html {
+  scroll-behavior: smooth;
+}
