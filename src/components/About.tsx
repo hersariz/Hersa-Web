@@ -87,7 +87,7 @@ const About = () => {
             </motion.p>
 
             <motion.div 
-              className="grid grid-cols-2 gap-4 mb-6"
+              className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.8 }}
@@ -156,7 +156,7 @@ const About = () => {
               whileInView={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.9 }}
               viewport={{ once: true }}
-              className="flex gap-4"
+              className="flex flex-col md:flex-row gap-4"
             >
               <motion.div
                 whileHover={{ scale: 1.05 }}
@@ -225,6 +225,16 @@ export default About;
     }
     .animate-blink {
       animation: blink 1.5s infinite ease-in-out;
+    }
+
+    @media (max-width: 768px) {
+      .button {
+        width: 100%; /* Lebar penuh di mobile */
+        margin-bottom: 8px; /* Jarak antar tombol */
+      }
+      .grid-cols-1 {
+        grid-template-columns: 1fr; /* Satu kolom di mobile */
+      }
     }
   `}
 </style>
