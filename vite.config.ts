@@ -102,4 +102,7 @@ export default defineConfig({
   server: {
     allowedHosts: true,
   },
+  build: {
+    assetsDir: 'assets', // Folder untuk menyimpan aset (gambar, dll.)
+  },
 });
