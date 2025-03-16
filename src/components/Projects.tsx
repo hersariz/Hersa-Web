@@ -8,7 +8,7 @@ const projects = [
     id: 1,
     title: 'E-Commerce Website',
     category: 'Web Development',
-    image: '/gambar/e-commerce/e5.png',
+    image: '/gambar/e-commerce/e5.PNG',
     description: 'A full-featured e-commerce platform with product listings, shopping cart, and checkout functionality.',
     technologies: ['React', 'Node.js', 'MongoDB', 'Stripe'],
     liveLink: '#',
