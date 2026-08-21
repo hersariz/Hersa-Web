@@ -17,7 +17,7 @@ const ProjectCard = ({ project, onViewDetails }: ProjectCardProps) => {
       transition={{ duration: 0.5 }}
       viewport={{ once: true, amount: 0.2 }}
       whileHover={{ y: -10 }}
-      className="h-full flex flex-col bg-white dark:bg-gray-900 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300"
+      className="h-full flex flex-col bg-white dark:bg-gray-900 rounded-xl overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-300"
     >
       <div className="relative group h-48 overflow-hidden">
         <motion.img
@@ -37,7 +37,7 @@ const ProjectCard = ({ project, onViewDetails }: ProjectCardProps) => {
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
             onClick={() => onViewDetails(project)}
-            className="p-2 bg-white text-gray-900 rounded-full hover:bg-blue-600 hover:text-white transition-colors"
+            className="p-2 bg-white text-gray-900 rounded-full hover:bg-accent-600 hover:text-white transition-colors"
             aria-label={`View details for ${project.title}`}
           >
             <Eye size={18} />
@@ -47,7 +47,7 @@ const ProjectCard = ({ project, onViewDetails }: ProjectCardProps) => {
 
       <div className="p-6 flex flex-col flex-1">
         <div className="flex items-center justify-between gap-2 mb-2">
-          <span className="text-xs font-semibold text-blue-600 dark:text-blue-400 uppercase tracking-wider">
+          <span className="text-xs font-semibold text-accent-600 dark:text-accent-400 uppercase tracking-wider">
             {project.category}
           </span>
           <span className="text-xs text-gray-500 dark:text-gray-500">{project.year}</span>
@@ -78,7 +78,7 @@ const ProjectCard = ({ project, onViewDetails }: ProjectCardProps) => {
             onClick={() => onViewDetails(project)}
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.97 }}
-            className="flex items-center text-blue-600 dark:text-blue-400 font-medium hover:text-blue-700 dark:hover:text-blue-300 transition-colors"
+            className="flex items-center text-accent-600 dark:text-accent-400 font-medium hover:text-accent-700 dark:hover:text-accent-300 transition-colors"
           >
             <span>View Details</span>
             <Eye size={16} className="ml-2" />
@@ -131,7 +131,7 @@ const Projects = () => {
           viewport={{ once: true, amount: 0.2 }}
         >
           <h2 className="text-3xl font-bold text-center mb-2">Selected Work</h2>
-          <div className="h-1 w-20 bg-blue-600 dark:bg-blue-400 mx-auto mb-4"></div>
+          <div className="h-1 w-20 bg-accent-600 dark:bg-accent-400 mx-auto mb-4"></div>
           <p className="text-center text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-12">
             Client products delivered for an international team, alongside things I built on my own.
             Client repositories are private, so those entries describe the work rather than link to it.
@@ -153,7 +153,7 @@ const Projects = () => {
               whileTap={{ scale: 0.95 }}
               className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
                 filter === category
-                  ? 'bg-blue-600 dark:bg-blue-500 text-white'
+                  ? 'bg-accent-600 dark:bg-accent-500 text-white'
                   : 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700'
               }`}
             >

@@ -43,12 +43,12 @@ const Experience = () => {
           viewport={{ once: true, amount: 0.2 }}
         >
           <h2 className="text-3xl font-bold text-center mb-2">Work Experience</h2>
-          <div className="h-1 w-20 bg-blue-600 dark:bg-blue-400 mx-auto mb-12"></div>
+          <div className="h-1 w-20 bg-accent-600 dark:bg-accent-400 mx-auto mb-12"></div>
         </motion.div>
 
         <div className="relative max-w-3xl mx-auto">
           {/* Vertical timeline line */}
-          <div className="absolute left-4 md:left-6 top-2 bottom-2 w-0.5 bg-blue-200 dark:bg-blue-900"></div>
+          <div className="absolute left-4 md:left-6 top-2 bottom-2 w-0.5 bg-accent-200 dark:bg-accent-900"></div>
 
           <div className="space-y-12">
             {experiences.map((exp, index) => (
@@ -61,12 +61,12 @@ const Experience = () => {
                 className="relative pl-12 md:pl-16"
               >
                 {/* Timeline dot */}
-                <div className="absolute left-4 md:left-6 top-2 -translate-x-1/2 w-4 h-4 rounded-full bg-blue-600 dark:bg-blue-400 ring-4 ring-blue-100 dark:ring-blue-900"></div>
+                <div className="absolute left-4 md:left-6 top-2 -translate-x-1/2 w-4 h-4 rounded-full bg-accent-600 dark:bg-accent-400 ring-4 ring-accent-100 dark:ring-accent-900"></div>
 
-                <div className="bg-white dark:bg-gray-900 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 p-6">
+                <div className="bg-white dark:bg-gray-900 rounded-xl shadow-card hover:shadow-card-hover transition-shadow duration-300 p-6">
                   <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2 mb-3">
                     <h3 className="text-xl font-bold">{exp.role}</h3>
-                    <span className="inline-flex items-center text-sm font-medium text-blue-600 dark:text-blue-400">
+                    <span className="inline-flex items-center text-sm font-medium text-accent-600 dark:text-accent-400">
                       <Calendar size={14} className="mr-1.5" />
                       {exp.period}
                     </span>
@@ -88,7 +88,7 @@ const Experience = () => {
                   <ul className="space-y-2 mb-5">
                     {exp.highlights.map((item, i) => (
                       <li key={i} className="flex text-sm text-gray-600 dark:text-gray-400">
-                        <span className="mr-2 text-blue-600 dark:text-blue-400">▸</span>
+                        <span className="mr-2 text-accent-600 dark:text-accent-400">▸</span>
                         <span>{item}</span>
                       </li>
                     ))}

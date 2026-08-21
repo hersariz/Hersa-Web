@@ -10,7 +10,7 @@ const Footer = () => {
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-10">
           <div className="md:col-span-2">
-            <h3 className="text-2xl font-bold mb-4">Hersa<span className="text-blue-400">.dev</span></h3>
+            <h3 className="text-2xl font-bold mb-4">Hersa<span className="text-accent-400">.dev</span></h3>
             <p className="text-gray-400 mb-6 max-w-md">
               Frontend developer focused on creating beautiful, responsive websites and applications with modern technologies.
             </p>
@@ -19,7 +19,7 @@ const Footer = () => {
                 href="https://github.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 bg-gray-800 hover:bg-blue-600 rounded-full transition-colors"
+                className="p-2 bg-gray-800 hover:bg-accent-600 rounded-full transition-colors"
                 aria-label="GitHub"
                 whileHover={{ scale: 1.2, rotate: 10 }}
                 whileTap={{ scale: 0.9 }}
@@ -30,7 +30,7 @@ const Footer = () => {
                 href="https://linkedin.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 bg-gray-800 hover:bg-blue-600 rounded-full transition-colors"
+                className="p-2 bg-gray-800 hover:bg-accent-600 rounded-full transition-colors"
                 aria-label="LinkedIn"
                 whileHover={{ scale: 1.2, rotate: 10 }}
                 whileTap={{ scale: 0.9 }}
@@ -41,7 +41,7 @@ const Footer = () => {
                 href="https://www.instagram.com/risyaha/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 bg-gray-800 hover:bg-blue-600 rounded-full transition-colors"
+                className="p-2 bg-gray-800 hover:bg-accent-600 rounded-full transition-colors"
                 aria-label="Instagram"
                 whileHover={{ scale: 1.2, rotate: 10 }}
                 whileTap={{ scale: 0.9 }}
@@ -50,7 +50,7 @@ const Footer = () => {
               </motion.a>
               <motion.a
                 href="mailto:Rizkymvp123@gmail.com"
-                className="p-2 bg-gray-800 hover:bg-blue-600 rounded-full transition-colors"
+                className="p-2 bg-gray-800 hover:bg-accent-600 rounded-full transition-colors"
                 aria-label="Email"
                 whileHover={{ scale: 1.2, rotate: 10 }}
                 whileTap={{ scale: 0.9 }}
@@ -204,7 +204,7 @@ const Footer = () => {
             smooth={true}
             offset={-70}
             duration={800}
-            className="p-3 bg-blue-600 hover:bg-blue-700 text-white rounded-full shadow-lg cursor-pointer flex items-center justify-center"
+            className="p-3 bg-accent-600 hover:bg-accent-700 text-white rounded-full shadow-lg cursor-pointer flex items-center justify-center"
             aria-label="Scroll to top"
           >
             <ArrowUp size={24} />

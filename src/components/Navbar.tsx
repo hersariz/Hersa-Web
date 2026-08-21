@@ -95,7 +95,7 @@ const Navbar = ({ toggleTheme, theme }: NavbarProps) => {
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
       className={`fixed w-full z-50 transition-all duration-300 ${
-        scrolled ? 'bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm shadow-md py-3' : 'bg-transparent py-5'
+        scrolled ? 'bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm shadow-card py-3' : 'bg-transparent py-5'
       }`}
     >
       <div className="container mx-auto px-4 md:px-6 flex justify-between items-center">
@@ -111,7 +111,7 @@ const Navbar = ({ toggleTheme, theme }: NavbarProps) => {
             className="text-xl font-bold cursor-pointer"
             onClick={() => handleNavClick('home')}
           >
-            Hersa<span className="text-blue-600 dark:text-blue-400">.dev</span>
+            Hersa<span className="text-accent-600 dark:text-accent-400">.dev</span>
           </Link>
         </motion.div>
 
@@ -134,15 +134,15 @@ const Navbar = ({ toggleTheme, theme }: NavbarProps) => {
                   onClick={() => handleNavClick(link.to)}
                   className={`cursor-pointer transition-colors font-medium relative px-1 py-1 ${
                     activeSection === link.to
-                      ? 'text-blue-600 dark:text-blue-400'
-                      : 'hover:text-blue-600 dark:hover:text-blue-400'
+                      ? 'text-accent-600 dark:text-accent-400'
+                      : 'hover:text-accent-600 dark:hover:text-accent-400'
                   }`}
                 >
                   {link.name}
                   {activeSection === link.to && (
                     <motion.div
                       layoutId="navIndicator"
-                      className="absolute bottom-0 left-0 right-0 h-0.5 bg-blue-600 dark:bg-blue-400 rounded-full"
+                      className="absolute bottom-0 left-0 right-0 h-0.5 bg-accent-600 dark:bg-accent-400 rounded-full"
                       transition={{ duration: 0.3, type: "spring", stiffness: 300, damping: 30 }}
                     />
                   )}
@@ -239,7 +239,7 @@ const Navbar = ({ toggleTheme, theme }: NavbarProps) => {
                     }}
                     className={`block px-3 py-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md transition-colors ${
                       activeSection === link.to
-                        ? 'text-blue-600 dark:text-blue-400 font-medium'
+                        ? 'text-accent-600 dark:text-accent-400 font-medium'
                         : ''
                     }`}
                   >

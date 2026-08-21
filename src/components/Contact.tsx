@@ -78,7 +78,7 @@ const Contact = () => {
           viewport={{ once: true, amount: 0.2 }}
         >
           <h2 className="text-3xl font-bold text-center mb-2">Get In Touch</h2>
-          <div className="h-1 w-20 bg-blue-600 dark:bg-blue-400 mx-auto mb-12"></div>
+          <div className="h-1 w-20 bg-accent-600 dark:bg-accent-400 mx-auto mb-12"></div>
           <p className="text-center text-gray-600 dark:text-gray-400 max-w-xl mx-auto mb-12">
             Feel free to reach out if you want to collaborate with me, or simply have a chat.
           </p>
@@ -99,7 +99,7 @@ const Contact = () => {
             >
               <motion.div 
                 whileHover={{ scale: 1.1, rotate: 15 }}
-                className="flex-shrink-0 p-3 bg-blue-100 dark:bg-blue-900/30 rounded-full text-blue-600 dark:text-blue-400"
+                className="flex-shrink-0 p-3 bg-accent-100 dark:bg-accent-900/30 rounded-full text-accent-600 dark:text-accent-400"
               >
                 <Phone size={24} />
               </motion.div>
@@ -109,7 +109,7 @@ const Contact = () => {
                   href="https://wa.me/6281906281392" 
                   target="_blank" 
                   rel="noopener noreferrer" 
-                  className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                  className="text-gray-600 dark:text-gray-400 hover:text-accent-600 dark:hover:text-accent-400 transition-colors"
                 >
                   +62 819 0628 1392
                 </a>
@@ -124,7 +124,7 @@ const Contact = () => {
             >
               <motion.div 
                 whileHover={{ scale: 1.1, rotate: 15 }}
-                className="flex-shrink-0 p-3 bg-blue-100 dark:bg-blue-900/30 rounded-full text-blue-600 dark:text-blue-400"
+                className="flex-shrink-0 p-3 bg-accent-100 dark:bg-accent-900/30 rounded-full text-accent-600 dark:text-accent-400"
               >
                 <Mail size={24} />
               </motion.div>
@@ -132,7 +132,7 @@ const Contact = () => {
                 <h3 className="text-lg font-semibold mb-1">Email</h3>
                 <a 
                   href="mailto:Rizkymvp123@gmail.com" 
-                  className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                  className="text-gray-600 dark:text-gray-400 hover:text-accent-600 dark:hover:text-accent-400 transition-colors"
                 >
                   Rizkymvp123@gmail.com
                 </a>
@@ -147,7 +147,7 @@ const Contact = () => {
             >
               <motion.div 
                 whileHover={{ scale: 1.1, rotate: 15 }}
-                className="flex-shrink-0 p-3 bg-blue-100 dark:bg-blue-900/30 rounded-full text-blue-600 dark:text-blue-400"
+                className="flex-shrink-0 p-3 bg-accent-100 dark:bg-accent-900/30 rounded-full text-accent-600 dark:text-accent-400"
               >
                 <MapPin size={24} />
               </motion.div>
@@ -157,7 +157,7 @@ const Contact = () => {
                   href="https://maps.app.goo.gl/8ovm42m2W3UFu5vk6" 
                   target="_blank" 
                   rel="noopener noreferrer" 
-                  className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                  className="text-gray-600 dark:text-gray-400 hover:text-accent-600 dark:hover:text-accent-400 transition-colors"
                 >
                   Semarang, Indonesia
                 </a>
@@ -172,13 +172,13 @@ const Contact = () => {
             viewport={{ once: true, amount: 0.2 }}
             className="lg:col-span-2"
           >
-            <form onSubmit={handleSubmit} className="bg-white dark:bg-gray-900 rounded-lg p-6 shadow-md">
+            <form onSubmit={handleSubmit} className="bg-white dark:bg-gray-900 rounded-xl p-6 shadow-card">
               {formStatus === 'success' && (
                 <motion.div 
                   initial={{ opacity: 0, height: 0 }}
                   animate={{ opacity: 1, height: 'auto' }}
                   exit={{ opacity: 0, height: 0 }}
-                  className="mb-6 p-4 bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-400 rounded-lg"
+                  className="mb-6 p-4 bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-400 rounded-xl"
                 >
                   Thank you for your message! I'll get back to you soon.
                 </motion.div>
@@ -189,7 +189,7 @@ const Contact = () => {
                   initial={{ opacity: 0, height: 0 }}
                   animate={{ opacity: 1, height: 'auto' }}
                   exit={{ opacity: 0, height: 0 }}
-                  className="mb-6 p-4 bg-red-100 dark:bg-red-900/30 text-red-800 dark:text-red-400 rounded-lg"
+                  className="mb-6 p-4 bg-red-100 dark:bg-red-900/30 text-red-800 dark:text-red-400 rounded-xl"
                 >
                   There was an error sending your message. Please try again.
                 </motion.div>
@@ -211,7 +211,7 @@ const Contact = () => {
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
-                    className="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-600 dark:focus:ring-blue-400 focus:border-transparent dark:bg-gray-800 text-gray-900 dark:text-gray-100"
+                    className="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-xl focus:ring-2 focus:ring-accent-600 dark:focus:ring-accent-400 focus:border-transparent dark:bg-gray-800 text-gray-900 dark:text-gray-100"
                     required
                   />
                 </motion.div>
@@ -230,7 +230,7 @@ const Contact = () => {
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    className="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-600 dark:focus:ring-blue-400 focus:border-transparent dark:bg-gray-800 text-gray-900 dark:text-gray-100"
+                    className="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-xl focus:ring-2 focus:ring-accent-600 dark:focus:ring-accent-400 focus:border-transparent dark:bg-gray-800 text-gray-900 dark:text-gray-100"
                     required
                   />
                 </motion.div>
@@ -252,7 +252,7 @@ const Contact = () => {
                   name="subject"
                   value={formData.subject}
                   onChange={handleChange}
-                  className="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-600 dark:focus:ring-blue-400 focus:border-transparent dark:bg-gray-800 text-gray-900 dark:text-gray-100"
+                  className="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-xl focus:ring-2 focus:ring-accent-600 dark:focus:ring-accent-400 focus:border-transparent dark:bg-gray-800 text-gray-900 dark:text-gray-100"
                   required
                 />
               </motion.div>
@@ -273,7 +273,7 @@ const Contact = () => {
                   value={formData.message}
                   onChange={handleChange}
                   rows={5}
-                  className="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-600 dark:focus:ring-blue-400 focus:border-transparent dark:bg-gray-800 text-gray-900 dark:text-gray-100 resize-none"
+                  className="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-xl focus:ring-2 focus:ring-accent-600 dark:focus:ring-accent-400 focus:border-transparent dark:bg-gray-800 text-gray-900 dark:text-gray-100 resize-none"
                   required
                 ></textarea>
               </motion.div>
@@ -286,13 +286,13 @@ const Contact = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.3, delay: 0.5 }}
                 viewport={{ once: true }}
-                className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg shadow-md hover:shadow-lg transition-all duration-300 flex items-center justify-center space-x-2 dark:bg-blue-500 dark:hover:bg-blue-600 relative overflow-hidden group"
+                className="px-6 py-3 bg-accent-600 hover:bg-accent-700 text-white font-medium rounded-xl shadow-card hover:shadow-lg transition-all duration-300 flex items-center justify-center space-x-2 dark:bg-accent-500 dark:hover:bg-accent-600 relative overflow-hidden group"
               >
                 <span className="relative z-10 flex items-center">
                   <Send size={18} className="mr-2" />
                   <span>Send Message</span>
                 </span>
-                <span className="absolute inset-0 bg-blue-700 dark:bg-blue-600 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></span>
+                <span className="absolute inset-0 bg-accent-700 dark:bg-accent-600 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></span>
               </motion.button>
             </form>
           </motion.div>

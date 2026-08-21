@@ -34,36 +34,21 @@ const Hero = () => {
       <section id="home" className=" bg-white dark:bg-gray-900">
       </section>
       <div className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-white to-gray-100 dark:from-gray-900 dark:to-gray-800">
-        <div className="absolute inset-0 overflow-hidden">
-          <motion.div 
-            animate={{ 
-              scale: [1, 1.1, 1],
-              opacity: [0.2, 0.3, 0.2]
-            }} 
-            transition={{ 
-              duration: 8,
-              repeat: Infinity,
-              repeatType: "reverse"
+        {/* Quiet background: a faint grid with one soft accent wash.
+            Static by choice — a hero that never stops moving is hard to read. */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div
+            className="absolute inset-0 opacity-[0.035] dark:opacity-[0.06]"
+            style={{
+              backgroundImage:
+                'linear-gradient(to right, currentColor 1px, transparent 1px), linear-gradient(to bottom, currentColor 1px, transparent 1px)',
+              backgroundSize: '64px 64px',
+              maskImage: 'radial-gradient(ellipse 70% 60% at 50% 40%, black, transparent)',
+              WebkitMaskImage:
+                'radial-gradient(ellipse 70% 60% at 50% 40%, black, transparent)',
             }}
-            className="absolute left-1/2 top-1/4 -translate-x-1/2 -translate-y-1/2 transform"
-          >
-            <div className="h-[500px] w-[500px] rounded-full bg-blue-400 opacity-20 blur-3xl dark:opacity-10"></div>
-          </motion.div>
-          <motion.div 
-            animate={{ 
-              scale: [1, 1.2, 1],
-              opacity: [0.2, 0.25, 0.2]
-            }} 
-            transition={{ 
-              duration: 10,
-              repeat: Infinity,
-              repeatType: "reverse",
-              delay: 1
-            }}
-            className="absolute right-1/4 bottom-1/4"
-          >
-            <div className="h-[300px] w-[300px] rounded-full bg-purple-400 opacity-20 blur-3xl dark:opacity-10"></div>
-          </motion.div>
+          />
+          <div className="absolute left-1/2 top-1/3 -translate-x-1/2 -translate-y-1/2 h-[420px] w-[620px] rounded-full bg-accent-400/15 dark:bg-accent-500/10 blur-[100px]" />
         </div>
 
         <div className="container mx-auto px-4 md:px-6 z-10 text-center">
@@ -81,7 +66,7 @@ const Hero = () => {
                 {[...Array(10)].map((_, i) => (
                   <motion.div
                     key={i}
-                    className="absolute w-1 h-1 bg-blue-400 rounded-full"
+                    className="absolute w-1 h-1 bg-accent-400 rounded-full"
                     initial={{ 
                       opacity: 0,
                       x: Math.random() * 250 - 100,
@@ -126,7 +111,7 @@ const Hero = () => {
                 ))}
               </div>
               <div style={textStyle} className="hover-effect">
-                <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 min-h-[1.2em] flex items-center justify-center">
+                <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-accent-600 to-purple-600 dark:from-accent-400 dark:to-purple-400 min-h-[1.2em] flex items-center justify-center">
                   <TypeAnimation
                     sequence={[
                       'Hersa Rizky Syahputra',
@@ -172,14 +157,14 @@ const Hero = () => {
                 smooth={true}
                 offset={-70}
                 duration={500}
-                className="px-6 py-3 min-w-[160px] inline-flex items-center justify-center whitespace-nowrap bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white font-medium rounded-lg shadow-md hover:shadow-lg transition-all duration-300 dark:from-blue-500 dark:to-blue-400 dark:hover:from-blue-600 dark:hover:to-blue-500 relative overflow-hidden group"
+                className="px-6 py-3 min-w-[160px] inline-flex items-center justify-center whitespace-nowrap bg-gradient-to-r from-accent-600 to-accent-500 hover:from-accent-700 hover:to-accent-600 text-white font-medium rounded-xl shadow-card hover:shadow-lg transition-all duration-300 dark:from-accent-500 dark:to-accent-400 dark:hover:from-accent-600 dark:hover:to-accent-500 relative overflow-hidden group"
               >
                 <span className="relative z-10 flex items-center justify-center">
                   <span className="mr-1">✨</span>
                   <span>View My Work</span>
                   <span className="ml-1">✨</span>
                 </span>
-                <span className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-blue-700 to-purple-600 dark:from-blue-600 dark:to-purple-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg"></span>
+                <span className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-accent-700 to-purple-600 dark:from-accent-600 dark:to-purple-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl"></span>
               </Link>
             </motion.div>
             <motion.div
@@ -192,10 +177,10 @@ const Hero = () => {
                 smooth={true}
                 offset={-70}
                 duration={500}
-                className="px-6 py-3 min-w-[160px] inline-flex items-center justify-center whitespace-nowrap bg-white dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-900 dark:text-white font-medium rounded-lg shadow-md hover:shadow-lg transition-all duration-300 border border-gray-200 dark:border-gray-700 relative overflow-hidden group"
+                className="px-6 py-3 min-w-[160px] inline-flex items-center justify-center whitespace-nowrap bg-white dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-900 dark:text-white font-medium rounded-xl shadow-card hover:shadow-lg transition-all duration-300 border border-gray-200 dark:border-gray-700 relative overflow-hidden group"
               >
                 <span className="relative z-10">Contact Me</span>
-                <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></span>
+                <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-accent-600 to-purple-600 dark:from-accent-400 dark:to-purple-400 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></span>
               </Link>
             </motion.div>
           </motion.div>

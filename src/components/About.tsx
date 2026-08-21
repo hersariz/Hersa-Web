@@ -16,7 +16,7 @@ const About = () => {
           viewport={{ once: true, amount: 0.2 }}
         >
           <h2 className="text-3xl font-bold text-center mb-2">About Me</h2>
-          <div className="h-1 w-20 bg-blue-600 dark:bg-blue-400 mx-auto mb-12"></div>
+          <div className="h-1 w-20 bg-accent-600 dark:bg-accent-400 mx-auto mb-12"></div>
         </motion.div>
 
         <div className="flex flex-col md:flex-row items-center gap-10 md:gap-16">
@@ -32,16 +32,12 @@ const About = () => {
               whileHover={{ scale: 1.03 }}
               transition={{ duration: 0.3 }}
             >
-              <div 
-                className="absolute -inset-2 rounded-xl blur opacity-30 animate-blink"
-                style={{
-                  boxShadow: '0 0 50px 20px rgba(100, 180, 255, 0.8), 0 0 100px 40px rgba(0, 210, 255, 0.6)' // Warna untuk tema terang
-                }}
-              ></div>
-              <img 
-                src="/gambar/hersa.jpg" 
-                alt="Hersa Rizky Syahputra" 
-                className="rounded-lg shadow-lg w-[300px] h-auto object-cover"
+              {/* A single offset accent frame instead of a neon glow. */}
+              <div className="absolute -inset-3 rounded-2xl bg-accent-500/10 dark:bg-accent-400/10 -rotate-2"></div>
+              <img
+                src="/gambar/hersa.jpg"
+                alt="Hersa Rizky Syahputra"
+                className="relative rounded-2xl w-[300px] h-auto object-cover ring-1 ring-gray-200 dark:ring-gray-700 shadow-card"
               />
             </motion.div>
           </motion.div>
@@ -99,7 +95,7 @@ const About = () => {
                 transition={{ duration: 0.2 }}
                 className="flex items-center gap-2"
               >
-                <User className="w-5 h-5 text-blue-600 dark:text-blue-400" />
+                <User className="w-5 h-5 text-accent-600 dark:text-accent-400" />
                 <div>
                   <h4 className="font-semibold mb-2">{isEnglish ? 'Name:' : 'Nama:'}</h4>
                   <p className="text-gray-700 dark:text-gray-300">Hersa Rizky Syahputra</p>
@@ -110,12 +106,12 @@ const About = () => {
                 transition={{ duration: 0.2 }}
                 className="flex items-center gap-2"
               >
-                <Mail className="w-5 h-5 text-blue-600 dark:text-blue-400" />
+                <Mail className="w-5 h-5 text-accent-600 dark:text-accent-400" />
                 <div>
                   <h4 className="font-semibold mb-2">Email:</h4>
                   <a 
                     href="mailto:Rizkymvp123@gmail.com" 
-                    className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                    className="text-gray-700 dark:text-gray-300 hover:text-accent-600 dark:hover:text-accent-400 transition-colors"
                   >
                     Rizkymvp123@gmail.com
                   </a>
@@ -126,14 +122,14 @@ const About = () => {
                 transition={{ duration: 0.2 }}
                 className="flex items-center gap-2"
               >
-                <MapPin className="w-5 h-5 text-blue-600 dark:text-blue-400" />
+                <MapPin className="w-5 h-5 text-accent-600 dark:text-accent-400" />
                 <div>
                   <h4 className="font-semibold mb-2">{isEnglish ? 'Location:' : 'Lokasi:'}</h4>
                   <a 
                     href="https://maps.app.goo.gl/8ovm42m2W3UFu5vk6" 
                     target="_blank" 
                     rel="noopener noreferrer" 
-                    className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                    className="text-gray-700 dark:text-gray-300 hover:text-accent-600 dark:hover:text-accent-400 transition-colors"
                   >
                     Semarang, Indonesia
                   </a>
@@ -144,7 +140,7 @@ const About = () => {
                 transition={{ duration: 0.2 }}
                 className="flex items-center gap-2"
               >
-                <Briefcase className="w-5 h-5 text-blue-600 dark:text-blue-400" />
+                <Briefcase className="w-5 h-5 text-accent-600 dark:text-accent-400" />
                 <div>
                   <h4 className="font-semibold mb-2">{isEnglish ? 'Availability:' : 'Ketersediaan:'}</h4>
                   <p className="text-gray-700 dark:text-gray-300">{isEnglish ? 'Open to opportunities' : 'Terbuka untuk peluang baru'}</p>
@@ -167,14 +163,14 @@ const About = () => {
                   href="https://wa.me/6281906281392" 
                   target="_blank" 
                   rel="noopener noreferrer" 
-                  className="px-6 py-3 min-w-[160px] inline-flex items-center justify-center whitespace-nowrap bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white font-medium rounded-lg shadow-md hover:shadow-lg transition-all duration-300 dark:from-blue-500 dark:to-blue-400 dark:hover:from-blue-600 dark:hover:to-blue-500 relative overflow-hidden group"
+                  className="px-6 py-3 min-w-[160px] inline-flex items-center justify-center whitespace-nowrap bg-gradient-to-r from-accent-600 to-accent-500 hover:from-accent-700 hover:to-accent-600 text-white font-medium rounded-xl shadow-card hover:shadow-lg transition-all duration-300 dark:from-accent-500 dark:to-accent-400 dark:hover:from-accent-600 dark:hover:to-accent-500 relative overflow-hidden group"
                 >
                   <span className="relative z-10 flex items-center justify-center">
                     <span className="mr-1">✨</span>
                     <span>{isEnglish ? 'Contact Me' : 'Hubungi Saya'}</span>
                     <span className="ml-1">✨</span>
                   </span>
-                  <span className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-blue-700 to-purple-600 dark:from-blue-600 dark:to-purple-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg"></span>
+                  <span className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-accent-700 to-purple-600 dark:from-accent-600 dark:to-purple-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl"></span>
                 </a>
               </motion.div>
 
@@ -185,7 +181,7 @@ const About = () => {
               >
                 <button
                   onClick={() => setIsEnglish(!isEnglish)}
-                  className="px-6 py-3 min-w-[160px] inline-flex items-center justify-center whitespace-nowrap bg-white dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-900 dark:text-white font-medium rounded-lg shadow-md hover:shadow-lg transition-all duration-300 border border-gray-200 dark:border-gray-700 relative overflow-hidden group"
+                  className="px-6 py-3 min-w-[160px] inline-flex items-center justify-center whitespace-nowrap bg-white dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-900 dark:text-white font-medium rounded-xl shadow-card hover:shadow-lg transition-all duration-300 border border-gray-200 dark:border-gray-700 relative overflow-hidden group"
                 >
                   <motion.span
                     key={isEnglish ? 'english' : 'bahasa'}
@@ -197,7 +193,7 @@ const About = () => {
                   >
                     {isEnglish ? 'Switch to Bahasa' : 'Switch to English'}
                   </motion.span>
-                  <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></span>
+                  <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-accent-600 to-purple-600 dark:from-accent-400 dark:to-purple-400 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></span>
                 </button>
               </motion.div>
             </motion.div>

@@ -1,6 +1,5 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Element } from 'react-scroll';
-import { motion } from 'framer-motion';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -13,24 +12,15 @@ import Footer from './components/Footer';
 import './index.css';
 
 function App() {
-  const [theme, setTheme] = useState<'light' | 'dark'>('light');
-  const [loading, setLoading] = useState(true);
-  const [scrollProgress, setScrollProgress] = useState(0);
-
-  useEffect(() => {
-    // Load saved theme from localStorage if available
-    const savedTheme = localStorage.getItem('theme') as 'light' | 'dark' | null;
-    if (savedTheme) {
-      setTheme(savedTheme);
-    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      setTheme('dark');
-    }
-    
-    // Simulate loading for a smoother animation
-    setTimeout(() => {
-      setLoading(false);
-    }, 1000);
-  }, []);
+  // Resolve the theme before the first render. Reading it in an effect instead
+  // let the "write theme to storage" effect below clobber a saved choice with
+  // the initial default on every load.
+  const [theme, setTheme] = useState<'light' | 'dark'>(() => {
+    const saved = localStorage.getItem('theme');
+    if (saved === 'dark' || saved === 'light') return saved;
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  });
+  const progressRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     // Update document class when theme changes
@@ -44,16 +34,33 @@ function App() {
     localStorage.setItem('theme', theme);
   }, [theme]);
 
-  // Track scroll progress
+  // Drive the progress bar straight through the DOM inside rAF. Holding it in
+  // state re-rendered the whole page on every scroll event.
   useEffect(() => {
-    const handleScroll = () => {
-      const totalHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-      const progress = (window.scrollY / totalHeight) * 100;
-      setScrollProgress(progress);
+    let frame = 0;
+
+    const update = () => {
+      frame = 0;
+      const el = progressRef.current;
+      if (!el) return;
+      const total =
+        document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const progress = total > 0 ? window.scrollY / total : 0;
+      el.style.transform = `scaleX(${progress})`;
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    const onScroll = () => {
+      if (!frame) frame = requestAnimationFrame(update);
+    };
+
+    update();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      window.removeEventListener('resize', onScroll);
+      if (frame) cancelAnimationFrame(frame);
+    };
   }, []);
 
   const toggleTheme = () => {
@@ -72,36 +79,13 @@ function App() {
     };
   }, []);
 
-  if (loading) {
-    return (
-      <div className="flex items-center justify-center h-screen bg-white dark:bg-gray-900">
-        <motion.div
-          animate={{ 
-            scale: [1, 1.5, 1],
-            rotate: [0, 360, 0],
-          }}
-          transition={{ 
-            duration: 2,
-            repeat: Infinity,
-            repeatType: "loop"
-          }}
-          className="w-16 h-16 rounded-full border-t-4 border-b-4 border-blue-600 dark:border-blue-400"
-        ></motion.div>
-      </div>
-    );
-  }
-
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.5 }}
-      className="font-inter bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 min-h-screen transition-colors duration-300"
-    >
+    <div className="font-inter bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 min-h-screen transition-colors duration-300">
       {/* Scroll Progress Indicator */}
-      <motion.div 
-        className="fixed top-0 left-0 right-0 h-1 bg-blue-600 dark:bg-blue-400 z-50 origin-left"
-        style={{ scaleX: `${scrollProgress / 100}` }}
+      <div
+        ref={progressRef}
+        className="fixed top-0 left-0 right-0 h-0.5 bg-accent-600 dark:bg-accent-400 z-50 origin-left"
+        style={{ transform: 'scaleX(0)' }}
       />
       
       <Navbar toggleTheme={toggleTheme} theme={theme} />
@@ -135,7 +119,7 @@ function App() {
       </Element>
       
       <Footer />
-    </motion.div>
+    </div>
   );
 }
 

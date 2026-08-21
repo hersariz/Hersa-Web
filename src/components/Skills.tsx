@@ -73,7 +73,7 @@ const strengths = [
 ];
 
 const cardClass =
-  'bg-gray-50 dark:bg-gray-800 border border-gray-100 dark:border-gray-700 rounded-lg p-6 shadow-md hover:shadow-xl transition-all duration-300';
+  'bg-gray-50 dark:bg-gray-800 border border-gray-100 dark:border-gray-700 rounded-xl p-6 shadow-card hover:shadow-card-hover transition-all duration-300';
 
 const Skills = () => {
   return (
@@ -86,7 +86,7 @@ const Skills = () => {
           viewport={{ once: true, amount: 0.2 }}
         >
           <h2 className="text-3xl font-bold text-center mb-2">Skills &amp; Tools</h2>
-          <div className="h-1 w-20 bg-blue-600 dark:bg-blue-400 mx-auto mb-12"></div>
+          <div className="h-1 w-20 bg-accent-600 dark:bg-accent-400 mx-auto mb-12"></div>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
@@ -103,7 +103,7 @@ const Skills = () => {
                 className={cardClass}
               >
                 <div className="flex items-center mb-4">
-                  <div className="p-2 rounded-lg bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 mr-3">
+                  <div className="p-2 rounded-lg bg-accent-50 dark:bg-accent-900/30 text-accent-600 dark:text-accent-400 mr-3">
                     <Icon size={20} />
                   </div>
                   <h3 className="font-bold text-lg">{group.title}</h3>
@@ -146,7 +146,7 @@ const Skills = () => {
                 whileHover={{ y: -6 }}
                 className={cardClass}
               >
-                <div className="inline-flex p-2 rounded-lg bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 mb-3">
+                <div className="inline-flex p-2 rounded-lg bg-accent-50 dark:bg-accent-900/30 text-accent-600 dark:text-accent-400 mb-3">
                   <Icon size={22} />
                 </div>
                 <h4 className="font-bold mb-2">{strength.title}</h4>

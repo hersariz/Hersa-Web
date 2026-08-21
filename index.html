@@ -3,21 +3,61 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta property="og:title" content="Hersa Web" />
-    <meta property="og:description" content="Showcase your unique potential with Hersa Web, an interactive and user-friendly personal portfolio platform from Hersa Rizky Syahputra." />
-    <meta property="og:image" content="https://assets.srcbook.com/og.png" type="image/png" />
-    <meta property="og:url" content="https://d5or3dkd5pea6.srcbook.app" />
+
+    <title>Hersa Rizky Syahputra — Full-Stack Developer</title>
+    <meta
+      name="description"
+      content="Full-stack developer in Semarang, Indonesia. React, Next.js, Angular, TypeScript, Node, PostgreSQL. A year of remote client work for a Singapore-based team: data dashboards, maps, payments, and real-time products."
+    />
+    <meta name="author" content="Hersa Rizky Syahputra" />
+    <meta name="theme-color" content="#0f172a" />
+    <link rel="canonical" href="https://hersa-web.vercel.app/" />
+
+    <!-- Open Graph -->
     <meta property="og:type" content="website" />
-    <meta property="og:author" content="Srcbook" />
-    <meta property="og:site_name" content="HersaHub" />
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:site" content="@srcbookcom" />
-    <meta property="twitter:title" content="Hersa Web" />
-    <meta property="twitter:description" content="Showcase your unique potential with Hersa Web, an interactive and user-friendly personal portfolio platform from Hersa Rizky Syahputra." />
-    <meta property="twitter:image" content="https://assets.srcbook.com/og.png" type="image/png" />
-    <link rel="shortcut icon" href="https://assets.srcbook.com/favicon.ico" type="image/x-icon" />
-    <link rel="apple-touch-icon" sizes="180x180" href="https://assets.srcbook.com/apple-touch-icon.png" type="image/png" />
-    <title>Hersa website</title>
+    <meta property="og:site_name" content="Hersa Rizky Syahputra" />
+    <meta property="og:title" content="Hersa Rizky Syahputra — Full-Stack Developer" />
+    <meta
+      property="og:description"
+      content="React, Next.js, Angular, TypeScript, Node. A year of remote client work for a Singapore-based team: data dashboards, maps, payments, and real-time products."
+    />
+    <meta property="og:url" content="https://hersa-web.vercel.app/" />
+    <meta property="og:image" content="https://hersa-web.vercel.app/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Hersa Rizky Syahputra, full-stack developer" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Hersa Rizky Syahputra — Full-Stack Developer" />
+    <meta
+      name="twitter:description"
+      content="React, Next.js, Angular, TypeScript, Node. A year of remote client work for a Singapore-based team."
+    />
+    <meta name="twitter:image" content="https://hersa-web.vercel.app/og-image.png" />
+
+    <!-- Favicon: inline so there is no extra request and nothing external to break -->
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%234f46e5'/%3E%3Ctext x='32' y='45' font-family='Segoe UI,Arial,sans-serif' font-size='38' font-weight='700' fill='white' text-anchor='middle'%3EH%3C/text%3E%3C/svg%3E"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Apply the saved theme before first paint so the page never flashes
+         the wrong colours on load. -->
+    <script>
+      (function () {
+        try {
+          var saved = localStorage.getItem('theme');
+          var dark =
+            saved === 'dark' ||
+            (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches);
+          if (dark) document.documentElement.classList.add('dark');
+        } catch (e) {}
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>

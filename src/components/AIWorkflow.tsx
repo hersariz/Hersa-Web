@@ -25,7 +25,7 @@ const steps = [
 ];
 
 const cardClass =
-  'bg-gray-50 dark:bg-gray-800 border border-gray-100 dark:border-gray-700 rounded-lg p-6 shadow-md hover:shadow-xl transition-shadow duration-300';
+  'bg-gray-50 dark:bg-gray-800 border border-gray-100 dark:border-gray-700 rounded-xl p-6 shadow-card hover:shadow-card-hover transition-shadow duration-300';
 
 const AIWorkflow = () => {
   return (
@@ -38,7 +38,7 @@ const AIWorkflow = () => {
           viewport={{ once: true, amount: 0.2 }}
         >
           <h2 className="text-3xl font-bold text-center mb-2">How I Work With AI</h2>
-          <div className="h-1 w-20 bg-blue-600 dark:bg-blue-400 mx-auto mb-4"></div>
+          <div className="h-1 w-20 bg-accent-600 dark:bg-accent-400 mx-auto mb-4"></div>
           <p className="text-center text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-12">
             AI coding agents are my daily working method, not an experiment. The method matters more
             than the tools, because the tools keep changing.
@@ -58,7 +58,7 @@ const AIWorkflow = () => {
                 className={cardClass}
               >
                 <div className="flex items-center mb-3">
-                  <div className="p-2 rounded-lg bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 mr-3">
+                  <div className="p-2 rounded-lg bg-accent-50 dark:bg-accent-900/30 text-accent-600 dark:text-accent-400 mr-3">
                     <Icon size={20} />
                   </div>
                   <h3 className="font-bold">{step.title}</h3>
@@ -75,7 +75,7 @@ const AIWorkflow = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
           viewport={{ once: true, amount: 0.2 }}
-          className="max-w-4xl mx-auto bg-gray-50 dark:bg-gray-800 rounded-lg p-6 md:p-8 shadow-md border-l-4 border-blue-600 dark:border-blue-400"
+          className="max-w-4xl mx-auto bg-gray-50 dark:bg-gray-800 rounded-xl p-6 md:p-8 shadow-card border-l-4 border-accent-600 dark:border-accent-400"
         >
           <h3 className="font-bold mb-3">Why the review step is not optional</h3>
           <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed mb-4">
