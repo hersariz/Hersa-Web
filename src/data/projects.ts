@@ -68,8 +68,8 @@ export const projects: Project[] = [
     category: 'Professional Work',
     role: 'Frontend Developer — admin panel owner',
     year: '2025 – 2026',
-    image: '/gambar/nextera/ukaly.svg',
-    images: ['/gambar/nextera/ukaly.svg'],
+    image: '/gambar/nextera/sgmap.svg',
+    images: ['/gambar/nextera/sgmap.svg'],
     description:
       'An internal admin panel for managing map-based business listings: onboarding businesses, editing rich content, moderating submissions, and tracking activity.',
     technologies: ['React 18', 'TypeScript', 'Leaflet', 'TanStack Query', 'Radix UI', 'Recharts', 'Stripe', 'Tailwind CSS'],
@@ -146,8 +146,8 @@ export const projects: Project[] = [
     category: 'AI & Automation',
     role: 'Full-stack — solo project',
     year: '2025',
-    image: '/gambar/CRMapp/c2.png',
-    images: ['/gambar/CRMapp/c2.png'],
+    image: '/gambar/nextera/hallo.svg',
+    images: ['/gambar/nextera/hallo.svg'],
     description:
       'A real-time chat application built in Next.js with an integrated AI assistant, automatic message translation, and voice and video calling.',
     technologies: ['Next.js 14', 'React', 'OpenAI API', 'Firebase', 'WebRTC', 'Cloudinary', 'i18next', 'Tailwind CSS'],
