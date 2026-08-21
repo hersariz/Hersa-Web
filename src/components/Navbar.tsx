@@ -22,7 +22,7 @@ const Navbar = ({ toggleTheme, theme }: NavbarProps) => {
       if (clickedSection) return;
       
       // Find the current active section
-      const sections = ['home', 'about', 'skills', 'projects', 'testimonials', 'contact'];
+      const sections = ['home', 'about', 'experience', 'skills', 'projects', 'ai-workflow', 'contact'];
       for (let i = sections.length - 1; i >= 0; i--) {
         const section = document.querySelector(`[name="${sections[i]}"]`);
         if (section) {
@@ -82,9 +82,10 @@ const Navbar = ({ toggleTheme, theme }: NavbarProps) => {
   const navLinks = [
     { name: 'Home', to: 'home' },
     { name: 'About', to: 'about' },
+    { name: 'Experience', to: 'experience' },
     { name: 'Skills', to: 'skills' },
     { name: 'Projects', to: 'projects' },
-    { name: 'Testimonials', to: 'testimonials' },
+    { name: 'AI Workflow', to: 'ai-workflow' },
     { name: 'Contact', to: 'contact' },
   ];
 

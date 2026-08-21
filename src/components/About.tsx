@@ -3,7 +3,8 @@ import { Mail, MapPin, User, Briefcase } from 'lucide-react';
 import { useState } from 'react'; // Tambahkan useState untuk toggle bahasa
 
 const About = () => {
-  const [isEnglish, setIsEnglish] = useState(false); // State untuk toggle bahasa
+  // Default to English: most visitors are international recruiters.
+  const [isEnglish, setIsEnglish] = useState(true);
 
   return (
     <section id="about" className="py-20 bg-white dark:bg-gray-900">
@@ -82,8 +83,8 @@ const About = () => {
               viewport={{ once: true }}
             >
               {isEnglish
-                ? "My journey in software development started in 2022, and since then, I've honed my skills in React, TypeScript, and modern CSS frameworks like Tailwind. I'm committed to writing clean, efficient code and creating intuitive, accessible interfaces."
-                : "Perjalanan saya dalam pengembangan perangkat lunak dimulai pada tahun 2022, dan sejak itu, saya telah mengasah keterampilan saya dalam React, TypeScript, dan framework CSS modern seperti Tailwind. Saya berkomitmen untuk menulis kode yang bersih dan efisien serta membuat antarmuka yang intuitif dan mudah diakses."}
+                ? "My journey in software development started in 2022. Most recently, I spent a year as a Frontend Developer at Nextera Tech, a Singapore-based company, working fully remote on production apps for international clients — from an Angular data-visualization dashboard for a government client to React and Next.js products for the Singapore market. I'm committed to writing clean, efficient code and creating intuitive, accessible interfaces."
+                : "Perjalanan saya dalam pengembangan perangkat lunak dimulai pada tahun 2022. Terakhir, saya bekerja selama satu tahun sebagai Frontend Developer di Nextera Tech, perusahaan yang berbasis di Singapura, secara remote mengerjakan aplikasi production untuk klien internasional — mulai dari dashboard visualisasi data berbasis Angular untuk klien pemerintahan hingga produk React dan Next.js untuk pasar Singapura. Saya berkomitmen untuk menulis kode yang bersih dan efisien serta membuat antarmuka yang intuitif dan mudah diakses."}
             </motion.p>
 
             <motion.div 

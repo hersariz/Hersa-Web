@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#312e81"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg)"/>
+  <g opacity="0.25">
+    <rect x="60" y="260" width="60" height="120" rx="6" fill="#60a5fa"/>
+    <rect x="140" y="200" width="60" height="180" rx="6" fill="#818cf8"/>
+    <rect x="220" y="300" width="60" height="80" rx="6" fill="#60a5fa"/>
+    <rect x="300" y="160" width="60" height="220" rx="6" fill="#a5b4fc"/>
+    <polyline points="60,180 170,120 280,170 390,90 500,140" fill="none" stroke="#93c5fd" stroke-width="6" stroke-linecap="round"/>
+    <circle cx="620" cy="230" r="110" fill="none" stroke="#818cf8" stroke-width="34" stroke-dasharray="320 400"/>
+    <circle cx="620" cy="230" r="110" fill="none" stroke="#60a5fa" stroke-width="34" stroke-dasharray="140 560" stroke-dashoffset="-330"/>
+  </g>
+  <text x="60" y="80" font-family="Inter, Arial, sans-serif" font-size="40" font-weight="700" fill="#f8fafc">Government Data Dashboard</text>
+  <text x="60" y="118" font-family="Inter, Arial, sans-serif" font-size="22" fill="#c7d2fe">Angular 19 · amCharts 5 · GraphQL · i18n</text>
+  <text x="60" y="420" font-family="Inter, Arial, sans-serif" font-size="16" fill="#94a3b8">Client project — preview mockup</text>
+</svg>

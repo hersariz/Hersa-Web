@@ -4,9 +4,10 @@ import { motion } from 'framer-motion';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
+import Experience from './components/Experience';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
-import Testimonials from './components/Testimonials';
+import AIWorkflow from './components/AIWorkflow';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import './index.css';
@@ -113,6 +114,10 @@ function App() {
         <About />
       </Element>
       
+      <Element name="experience" className="element">
+        <Experience />
+      </Element>
+
       <Element name="skills" className="element">
         <Skills />
       </Element>
@@ -121,8 +126,8 @@ function App() {
         <Projects />
       </Element>
       
-      <Element name="testimonials" className="element">
-        <Testimonials />
+      <Element name="ai-workflow" className="element">
+        <AIWorkflow />
       </Element>
       
       <Element name="contact" className="element">

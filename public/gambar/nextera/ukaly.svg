@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#064e3b"/>
+      <stop offset="100%" stop-color="#0f766e"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg)"/>
+  <g opacity="0.25" stroke="#6ee7b7" stroke-width="3" fill="none">
+    <path d="M-20 300 Q 150 240 300 290 T 620 260 T 850 300"/>
+    <path d="M-20 340 Q 180 290 340 330 T 640 310 T 850 350"/>
+    <path d="M120 -20 Q 160 120 100 240"/>
+    <path d="M420 -20 Q 460 100 400 220 Q 360 300 420 470"/>
+  </g>
+  <g opacity="0.85">
+    <path d="M600 140 c-30 0 -54 24 -54 54 c0 40 54 96 54 96 s54 -56 54 -96 c0 -30 -24 -54 -54 -54 z" fill="#34d399"/>
+    <circle cx="600" cy="196" r="22" fill="#064e3b"/>
+    <circle cx="230" cy="120" r="14" fill="#6ee7b7"/>
+    <circle cx="330" cy="360" r="14" fill="#6ee7b7"/>
+    <circle cx="140" cy="260" r="14" fill="#6ee7b7"/>
+  </g>
+  <text x="60" y="80" font-family="Inter, Arial, sans-serif" font-size="40" font-weight="700" fill="#f0fdf4">Ukaly — Map of Singapore</text>
+  <text x="60" y="118" font-family="Inter, Arial, sans-serif" font-size="22" fill="#a7f3d0">React 18 · Leaflet · Stripe · TanStack Query</text>
+  <text x="60" y="420" font-family="Inter, Arial, sans-serif" font-size="16" fill="#86efac" opacity="0.8">Client project — preview mockup</text>
+</svg>

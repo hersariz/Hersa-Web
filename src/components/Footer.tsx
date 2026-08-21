@@ -89,6 +89,18 @@ const Footer = () => {
               </motion.li>
               <motion.li whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>
                 <Link
+                  to="experience"
+                  spy={true}
+                  smooth={true}
+                  offset={-70}
+                  duration={500}
+                  className="text-gray-400 hover:text-white transition-colors cursor-pointer"
+                >
+                  Experience
+                </Link>
+              </motion.li>
+              <motion.li whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>
+                <Link
                   to="skills"
                   spy={true}
                   smooth={true}
@@ -113,14 +125,14 @@ const Footer = () => {
               </motion.li>
               <motion.li whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>
                 <Link
-                  to="testimonials"
+                  to="ai-workflow"
                   spy={true}
                   smooth={true}
                   offset={-70}
                   duration={500}
                   className="text-gray-400 hover:text-white transition-colors cursor-pointer"
                 >
-                  Testimonials
+                  AI Workflow
                 </Link>
               </motion.li>
               <motion.li whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>

@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#7c2d12"/>
+      <stop offset="100%" stop-color="#b45309"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg)"/>
+  <g opacity="0.3">
+    <rect x="480" y="120" width="260" height="180" rx="12" fill="none" stroke="#fdba74" stroke-width="5"/>
+    <line x1="610" y1="120" x2="610" y2="300" stroke="#fdba74" stroke-width="4"/>
+    <circle cx="560" cy="200" r="18" fill="#fed7aa"/>
+    <circle cx="680" cy="250" r="18" fill="#fed7aa"/>
+  </g>
+  <g opacity="0.25" fill="#fed7aa">
+    <rect x="60" y="250" width="300" height="46" rx="10"/>
+    <rect x="60" y="310" width="300" height="46" rx="10"/>
+    <rect x="60" y="370" width="190" height="46" rx="10"/>
+  </g>
+  <text x="60" y="80" font-family="Inter, Arial, sans-serif" font-size="40" font-weight="700" fill="#fff7ed">Padel Coaching Platform</text>
+  <text x="60" y="118" font-family="Inter, Arial, sans-serif" font-size="22" fill="#fed7aa">Next.js · Supabase · Socket.IO · OpenAPI</text>
+  <text x="60" y="430" font-family="Inter, Arial, sans-serif" font-size="16" fill="#fdba74" opacity="0.85">Client project — preview mockup</text>
+</svg>

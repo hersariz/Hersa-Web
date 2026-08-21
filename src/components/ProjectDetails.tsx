@@ -1,29 +1,17 @@
 import { motion } from 'framer-motion';
-import { X } from 'lucide-react';
+import { X, Github, ExternalLink, Lock } from 'lucide-react';
+import type { Project } from '../data/projects';
 
 interface ProjectDetailsProps {
-  project: {
-    id: number;
-    title: string;
-    category: string;
-    image: string;
-    description: string;
-    technologies: string[];
-    liveLink: string;
-    githubLink: string;
-    images?: string[];
-    challenge?: string;
-    solution?: string;
-    features?: string[];
-  } | null;
+  project: Project | null;
   isOpen: boolean;
   onClose: () => void;
 }
 
 const ProjectDetails = ({ project, isOpen, onClose }: ProjectDetailsProps) => {
   if (!project) return null;
-  
-  const images = project.images || [project.image];
+
+  const images = project.images?.length ? project.images : [project.image];
 
   return (
     <motion.div
@@ -42,75 +30,129 @@ const ProjectDetails = ({ project, isOpen, onClose }: ProjectDetailsProps) => {
         className="bg-white dark:bg-gray-900 rounded-lg shadow-lg w-full max-w-4xl max-h-[90vh] overflow-y-auto"
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="p-6">
-          <div className="flex justify-between items-center mb-6">
-            <h2 className="text-2xl font-bold">{project.title}</h2>
+        <div className="p-6 md:p-8">
+          {/* Header */}
+          <div className="flex justify-between items-start mb-2 gap-4">
+            <div>
+              <span className="text-xs font-semibold text-blue-600 dark:text-blue-400 uppercase tracking-wider">
+                {project.category} · {project.year}
+              </span>
+              <h2 className="text-2xl font-bold mt-1">{project.title}</h2>
+              <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">{project.role}</p>
+            </div>
             <button
               onClick={onClose}
-              className="p-2 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition-colors"
+              className="p-2 shrink-0 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition-colors"
+              aria-label="Close project details"
             >
               <X size={24} />
             </button>
           </div>
 
-          {/* Bagian Gambar */}
-          <div className="mb-6">
+          {/* Links */}
+          <div className="flex flex-wrap items-center gap-3 mb-6 mt-4">
+            {project.githubLink && (
+              <a
+                href={project.githubLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center px-4 py-2 rounded-full bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900 text-sm font-medium hover:opacity-90 transition-opacity"
+              >
+                <Github size={16} className="mr-2" />
+                View Code
+              </a>
+            )}
+            {project.liveLink && (
+              <a
+                href={project.liveLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center px-4 py-2 rounded-full bg-blue-600 text-white text-sm font-medium hover:bg-blue-700 transition-colors"
+              >
+                <ExternalLink size={16} className="mr-2" />
+                Live Site
+              </a>
+            )}
+            {!project.githubLink && !project.liveLink && (
+              <span className="inline-flex items-center px-4 py-2 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 text-sm">
+                <Lock size={14} className="mr-2" />
+                Client project — repository is private
+              </span>
+            )}
+          </div>
+
+          {/* Images */}
+          <div className="mb-8">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {images.map((image, index) => (
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.3, delay: index * 0.1 }}
+                  transition={{ duration: 0.3, delay: index * 0.08 }}
                   viewport={{ once: true }}
                 >
                   <img
                     src={image}
-                    alt={`${project.title} - Image ${index + 1}`}
-                    className="w-full h-auto object-contain rounded-lg"
+                    alt={`${project.title} screenshot ${index + 1}`}
+                    loading="lazy"
+                    className="w-full h-auto object-contain rounded-lg border border-gray-100 dark:border-gray-800"
                   />
                 </motion.div>
               ))}
             </div>
           </div>
 
-          {/* Bagian Deskripsi */}
-          <div className="space-y-4">
+          {/* Case study */}
+          <div className="space-y-6">
             <div>
-              <h3 className="text-lg font-semibold mb-2">Description</h3>
+              <h3 className="text-lg font-semibold mb-2">Overview</h3>
               <p className="text-gray-600 dark:text-gray-400">{project.description}</p>
             </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="p-5 rounded-lg bg-gray-50 dark:bg-gray-800/60">
+                <h3 className="text-sm font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-2">
+                  The Problem
+                </h3>
+                <p className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
+                  {project.challenge}
+                </p>
+              </div>
+              <div className="p-5 rounded-lg bg-blue-50 dark:bg-blue-900/20">
+                <h3 className="text-sm font-semibold uppercase tracking-wider text-blue-600 dark:text-blue-400 mb-2">
+                  What I Built
+                </h3>
+                <p className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
+                  {project.solution}
+                </p>
+              </div>
+            </div>
+
             <div>
-              <h3 className="text-lg font-semibold mb-2">Technologies</h3>
+              <h3 className="text-lg font-semibold mb-3">Key Features</h3>
+              <ul className="space-y-2">
+                {project.features?.map((feature, index) => (
+                  <li key={index} className="flex text-gray-600 dark:text-gray-400 text-sm">
+                    <span className="mr-2 text-blue-600 dark:text-blue-400">▸</span>
+                    <span>{feature}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div>
+              <h3 className="text-lg font-semibold mb-3">Stack</h3>
               <div className="flex flex-wrap gap-2">
                 {project.technologies.map((tech, index) => (
-                  <motion.span
+                  <span
                     key={index}
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.3, delay: 0.4 + index * 0.1 }}
-                    whileHover={{ y: -2, scale: 1.05 }}
                     className="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 text-xs rounded-full"
                   >
                     {tech}
-                  </motion.span>
+                  </span>
                 ))}
               </div>
-            </div>
-            <div>
-              <h3 className="text-lg font-semibold mb-2">Features</h3>
-              <ul className="list-disc list-inside text-gray-600 dark:text-gray-400">
-                {project.features?.map((feature, index) => (
-                  <motion.li
-                    key={index}
-                    initial={{ opacity: 0, y: 10 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.3, delay: index * 0.1 }}
-                  >
-                    {feature}
-                  </motion.li>
-                ))}
-              </ul>
             </div>
           </div>
         </div>
